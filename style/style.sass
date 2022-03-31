@@ -1,0 +1,101 @@
+@import "color"
+
+body 
+    background: #17212B
+
+.menu 
+    position: absolute
+    top: 0%
+    left: 0%
+    position: fixed
+    background-color: #17212B
+
+
+.blue
+    background-color: $blue
+.pink
+    background-color: $pink
+.red
+    background-color: $red
+.green
+    background-color: $green
+.orange
+    background-color: $orange
+.blue-two
+    background-color: $blue-two
+.pink-two
+    background-color: $pink-two
+
+ul 
+    padding: 0px
+    margin: 0px
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: center
+    li 
+        list-style-type: none
+        padding: 5px 10px 5px 10px
+        border-radius: 5px 
+        text-align: center
+        margin: 10px
+        transition: 0.3s
+        border: 1px solid rgba(255,255,255,0.1)
+        &:hover 
+                cursor: pointer
+                background: #17212B
+                border: 1px solid #fff            
+        a 
+            width: 100%
+            height: 100%
+            text-decoration: none 
+            color: #fff
+            
+
+@media(max-width: 1280px)
+    .content 
+        margin: 100px 20px 100px 20px !important
+    .menu
+        width: 100%  
+        margin-top: 10px     
+    ul 
+        flex-direction: row
+        margin: 0px
+        li 
+            margin: 5px
+
+@media(max-width: 992px)
+    .content 
+        margin: 100px 20px 100px 20px !important
+    .menu
+        width: 100% 
+        padding: 0px 
+        margin-top: 10px     
+    ul 
+        flex-direction: row
+        margin: 0px
+        li 
+            margin: 5px
+
+@media(max-width: 767px)
+    .content 
+        margin: 120px 20px 120px !important
+    ul 
+        padding: 0px 
+        margin: 0px
+        li 
+            margin: 5px
+
+
+
+.container 
+    max-width: 1200px
+    margin: 0 auto
+
+.content 
+    background: #fff
+    height: 82vh
+    padding: 20px
+    border-radius: 5px
+    margin: 50px 20px 50px 20px
+
