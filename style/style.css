@@ -139,10 +139,21 @@ ul li a {
 }
 
 .content {
-  background: #fff;
-  height: 82vh;
-  padding: 20px;
-  border-radius: 5px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 50px 20px 50px 20px;
+}
+
+.block {
+  width: 100%;
+  height: 85%;
+  border-radius: 5px;
+  background: #fff;
+  padding: 20px;
 }
 /*# sourceMappingURL=style.css.map */
