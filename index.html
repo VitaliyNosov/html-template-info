@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/prism.css">
+    <link rel="stylesheet" href="style/overlayScrollbars.css">
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
@@ -14,11 +16,13 @@
             <div class="header">
                 <div class="menu">
                     <ul>
-                        <li class="blue">
+                        <li class="pink">
                             <a class="go_to" href="#elm">http</a>
                         </li>
-                        <li class="pink">
-                            <a class="go_to" href="#elm-2">php</a>
+                        <li class="blue">
+                            <a class="go_to" href="#elm-2">
+                                php
+                            </a>
                         </li>
                         <li class="blue-two">
                             <a class="go_to" href="#elm-3">word press</a>
@@ -35,19 +39,317 @@
                         <li class="pink">
                             <a class="go_to" href="#elm-7">html</a>
                         </li>
+                        <li class="blue">
+                            <a class="go_to" href="#elm-8">mysql</a>
+                        </li>
+                        <li class="orange">
+                            <a class="go_to" href="#elm-9">ajax</a>
+                        </li>
+                        <li class="blue-two">
+                            <a class="go_to" href="#elm-10">json</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="content" id="elm">
-                <div class="block">http</div>
+                <div class="block">
+                    <p>
+                        <span class="pink">TCP</span> - то криптографический протокол, позволяющий создавать доказательство факта существования электронного документа на определённый момент времени.
+                            «Штамп времени» (англ. time-stamp) — это документ, подписанный электронной подписью (ЭП).
+                    </p>
+                    <ul>
+                        <li>1) Этот протокол позволяет с 100% вероятностью передать данные, если маршрут был нарушен он выберет другой .</li>
+                        <li>2) Данные отправляет потоками.</li>
+                        <li>3) Одна информация которая делиться на пакеты.</li>
+                        <li>4) Выбирает максимально короткий путь передачи информации за счет пакетов и алгоритмов передачи.</li>
+                    </ul>
+                    <p>
+                        <span class="pink">HTTP</span> - это надстройка  над протоколом TCP . 
+                        <span class="pink">HTTP</span> -  это протокол передачи гипер-текста ( html ) 
+                        Технология <span class="pink">DNS</span> -  позволяет прикрепит доменное имея к определенному сайту. 
+                        Доменные зоны: live.vitaliynosov.com
+                    </p>
+                    <ul>
+                        <li>1) live - это под домен 3 уровня</li>
+                        <li>2) vitaliynosov - это домен 2 уровня</li>
+                        <li>3) com - это домен 1 уровня</li>
+                        <li>4) в конце com технически всегда есть точка это доменная зона 0 уровня</li>
+                    </ul>
+                    <p>
+                        Домены и под домены нужны для фильтрации поисковых систем что позволяет быстро найти 
+                        информацию на фоне других доменов.
+                    </p>
+                    <p>
+                        <span class="pink">HTTPS</span> не является отдельным протоколом передачи данных, а представляет собой расширение протокола <span class="pink">HTTP</span>
+                        с надстройкой шифрования; передаваемые по протоколу <span class="pink">HTTP</span> данные не защищены, <span class="pink">HTTPS</span> обеспечивает конфиденциальность информации путем ее шифрования;
+                        <span class="pink">HTTP</span> использует порт 80, <p><span class="pink">HTTPS — порт 443.</span></p>
+                    </p>
+                    <p>
+                        По умолчанию браузеры общаются с сервером по <span class="pink">HTTP.</span> Чтобы соединение стало безопасным, владелец сайта должен установить SSL-сертификат на хостинг.
+                        Когда владелец сайта устанавливает SSL-сертификат, в адресной строке браузера появляется значок замка и <span class="pink">HTTP</span> меняется на <span class="pink">HTTPS.</span> 
+                        Это значит, что на сайте безопасно вводить личную информацию.
+                    </p>
+                    <p>
+                        Ошибки <span class="pink">HTTP:</span>  
+                    </p>
+                        <a class="link-pink" target="_blank" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F_HTTP">Список ошибок</a>
+                    <p>
+                        Методы <span class="pink">HTTP запроса:</span>
+                    </p>
+                    <p>
+                        <span class="pink">HTTP</span> определяет множество методов запроса, которые указывают, какое желаемое действие выполнится для данного ресурса. 
+                        Несмотря на то, что их названия могут быть существительными, эти методы запроса иногда называются HTTP глаголами. 
+                        Каждый реализует свою семантику, но каждая группа команд разделяет общие свойства: так, методы могут быть безопасными, идемпотентными или кешируемыми.
+                    </p>
+                    <ul>
+                        <li><p><span class="pink">GET</span> -запрашивает представление ресурса. Запросы с использованием этого метода могут только извлекать данные.</p></li>
+                        <li><p><span class="pink">HEAD</span> - запрашивает ресурс так же, как и метод GET, но без тела ответа.</p></li>
+                        <li><p><span class="pink">POST</span> - используется для отправки сущностей к определённому ресурсу. 
+                            Часто вызывает изменение состояния или какие-то побочные эффекты на сервере.</p></li>
+                        <li><p><span class="pink" >PUT</span> - заменяет все текущие представления ресурса данными запроса.</p></li>
+                        <li><p><span class="pink">DELETE</span> - удаляет указанный ресурс.</p></li>
+                        <li><p><span class="pink" >CONNECT</span> - устанавливает "туннель" к серверу, определённому по ресурсу.</p></li>
+                        <li><p><span class="pink">OPTIONS</span> - используется для описания параметров соединения с ресурсом.</p></li>
+                        <li><p><span class="pink">TRACE</span> - выполняет вызов возвращаемого тестового сообщения с ресурса.</p></li>
+                        <li><p><span class="pink">PATCH</span> - используется для частичного изменения ресурса.</p></li>
+                    </ul>
+                    <div class="block-footer"></div>
+                </div>
             </div>
             <div class="content" id="elm-2" >
-                <div class="block">php</div>
+                <div class="block">
+                    <a href="https://metanit.com/php/tutorial/2.3.php">Источник</a>
+                    <h1>PHP - Hypertext Preprocessor — «PHP: препроцессор гипертекста»</h1>
+                    <p>
+                        PHP является языком с динамической типизацией. Это значит, 
+                        что тип данных переменной выводится во время выполнения, 
+                        и в отличии от ряда других языков программирования в PHP не надо указывать перед переменной тип данных.
+                    </p>
+                    <p><span class="blue">Типы данныx:</span></p>
+                    <p>
+                        <ul>
+                            <li>bool (логический тип)</li>
+                            <li>int (целые числа)</li>
+                            <li>float (дробные числа)</li>
+                            <li>string (строки)</li>
+                            <li>array (массивы)</li>
+                            <li>object (объекты)</li>
+                            <li>callable (функции)</li>
+                            <li>mixed (любой тип)</li>
+                            <li>resource (ресурсы)</li>
+                            <li>null (отсутствие значения)</li>
+                        </ul>
+                        <p>
+                            Из этих типов данных первые четыре являются скалярными: bool, int, float, string.
+                            Поэтому вначале именно их и рассмотрим.
+                        </p>
+                    </p>
+                    <p>
+                        <pre class="lang-php">
+                            <code>
+                                $num = -100;
+                                echo $num;
+                            </code>
+                        </pre>
+                    </p>
+                    <p><span class="blue">Операции:</span></p>
+                        <p>asa</p>
+                    <p><span class="blue">Конструкция if..else и тернарная операция:</span></p>
+                        <p></p>
+                    <p><span class="blue">Конструкции switch и match:</span></p>
+                        <p></p>
+                    <p><span class="blue">Циклы:</span></p>
+                        <p></p>
+                    <p><span class="blue">Массивы:</span></p>
+                        <p></p>
+                    <p><span class="blue">Ассоциативные массивы:</span></p>
+                        <p></p>
+                    <p><span class="blue">Многомерные массивы:</span></p>
+                        <p></p>
+                    <p><span class="blue">Функции:</span></p>
+                        <p></p>
+                    <p><span class="blue">Параметры функции:</span></p>
+                        <p></p>
+                    <p><span class="blue">Возвращение значений и оператор return:</span></p>
+                        <p></p>
+                    <p><span class="blue">Анонимные функции:</span></p>
+                        <p></p>
+                    <p><span class="blue">Замыкания / Closure:</span></p>
+                        <p></p>
+                    <p><span class="blue">Стрелочные функции:</span></p>
+                        <p></p>
+                    <p><span class="blue">Генераторы:</span></p>
+                        <p></p>
+                    <p><span class="blue">Ссылки:</span></p>
+                        <p></p>
+                    <p><span class="blue">Область видимости переменной:</span></p>
+                        <p></p>
+                    <p><span class="blue">Константы:</span></p>
+                        <p></p>
+                    <p><span class="blue">Проверка существования переменной:</span></p>
+                        <p></p>
+                    <p><span class="blue">Получение и установка типа переменной. Преобразование типов:</span></p>
+                        <p></p>
+                    <p><span class="blue">Операции с массивами:</span></p>
+                        <p></p>
+                    <div class="block-footer"></div>
+                </div>
             </div>
             <div class="content" id="elm-3">
-                <div class="block">word press</div>
+                <div class="block">
+                    <h1>
+                        WordPress — система с открытым исходным кодом; написана на PHP. 
+                    </h1>
+                    <p><span class="blue-two">Хуки:</span></p>
+                    <h3>Хуки: это Filter и Action</h3>
+                    <h4>Отличие Filter от Action это коблек функция.</h4>
+                    <p>
+                        <span class="bold">Action:</span> запускает произвольный код — кол-бэк функция прикрепленный к хуку сработает в момент срабатывания хука в коде.
+                    </p>
+                    <p>
+                        Что такое кол-бек функция - функция обратного вызова 
+                        (часто называемая просто "callback") — это функция, 
+                        которая передается в качестве аргумента другой функции.
+                    </p>
+                    <p>
+                        <span class="bold">add_action()</span> - добавляет/прикрепляет функции к событию.</br>
+                        <span class="bold">do_action()</span> - вызывает эту функцию.
+                    </p>
+                    <p>
+                        <span class="bold">Filter:</span> Изменяет значение переменной — получает значение и возвращает его (изменённое или нет).
+                    </p>
+                    <p>
+                        <span class="bold">add_filter( hook_name, function, priority, args_num )</span> — добавляет/прикрепляет функцию к фильтру,                    
+                        которая будет вызвана в момент срабатывания фильтра. Такая функция называется «коллбэк-функция».
+                    </p>
+                    <p>
+                        <span class="bold">apply_filters( hook_name, value, args... )</span> — создает хук-фильтр. Запускает прикрепленные к фильтру коллбэк-функцию.
+                    </p>
+                    <h3>
+                        Пример:
+                    </h3>
+                    <p>
+                        <pre class="lang-php">
+                            <code>
+                                // Активный класс меню
+
+                                add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+                                function special_nav_class ($classes, $item) {
+                                    if (in_array('current-menu-item', $classes) ){
+                                        $classes[] = 'active ';
+                                    }
+                                    return $classes;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    
+                    <p><span class="blue-two">Таксаномии:</span></p>
+                    <p>
+                        <span class="bold">Таксаномии</span> - это рубрики.
+                    </p>
+                    <p>
+                        Сначала нужно регистрировать таксономию, а потом тип записи с которым эта таксономия связана!
+                    </p>
+                    <p>
+                        <pre class="lang-php">
+                            <code>
+                                // правильный порядок регистрации типа записи и её таксономии
+                                register_taxonomy( ... );
+                                register_post_type( ... );
+
+                                // функцию желательно вызывать во время события init:
+
+                                add_action( 'init', 'function_name' );
+                            </code>
+                        </pre>
+                    </p>
+                    <p><span class="blue-two">Custome Post Type:</span></p>
+                    <p>
+                        Функция регистрации нового типа записи: <span class="bold">register_post_type()</span>
+                    </p>
+                    <p>
+                        <span class="bold">Custome Post Type</span> - это новый тип записи.  Создает новый тип записи или изменяет имеющийся.
+                    </p>
+                    <p><span class="blue-two">Виджеты:</span></p>
+                    <p>
+                        <span class="bold">Виджеты WordPress</span> - являются частью  элемента WordPress, 
+                        который выполняет одну конкретную функцию: добавление дополнительного содержимого и структуры на 
+                        боковую панель или нижний колонтитул. Например, виджеты могут отображать ваши последние сообщения, 
+                        календарь, панель поиска и многое другое.
+                    </p>
+                    <p>
+                        Функция регистрации нового виджета - <span class="bold">register_widget()</span>
+                    </p>
+                    <p><span class="blue-two">Шорткод:</span></p>
+                    <p>
+                        <span class="bold">Шорткод</span> - это конструкция в тексте, которая будет обработана и заменена на указанный код/текст. 
+                        Обрабатывается шор-ткод специальной PHP функцией, указанной при регистрации шорт-кода.
+                    </p>
+                    <h3>Пример:</h3>
+                    <p>
+                        <pre class="lang-php">
+                            <code>
+                                //функция создания:
+
+                                add_shortcode() 
+
+                               //функция вывода в шаблоне:
+
+                                do_shortcode( '[about-slider-one]' )
+
+                              //вывод в редакторе: название шорт-кода [шорт-код]
+                            </code>
+                        </pre>
+                    </p>
+                    <p><span class="blue-two">Мультисайт:</span></p>
+                    <p>
+                        <span class="bold">Мультисайт</span> - это такой вариант конфигурации WP, 
+                        который позоляет вам использовать неограниченное количество сайтов в пределах одной-единственной 
+                        установки WordPress и управлять всеми этими сайтами как суперадминистратор.
+                    </p>
+                    <p>
+                        <span class="bold">Настройка:</span>
+                    </p>
+                    <p>
+                        Откройте конфигурационный файл WordPress wp-config.php, 
+                        который лежит в корне вашего сайта или на одну директорию выше 
+                        (для этого может понадобиться подключиться по FTP) и найдите следующую строку:
+                    </p>
+                    <p>
+                        <pre class="lang-php">
+                            <code>
+                                require_once( ABSPATH . 'wp-settings.php' );
+
+                                //в любом месте до этой строки вставьте следующую директиву, 
+                                //которая включает возможность установки режима Multisite:
+
+                                //включение режима WordPress Мультисайт
+
+                                define( 'WP_ALLOW_MULTISITE', true );
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        <span class="bold">Подробнее:</span>
+                    </p>
+                        <a target="_blank" href="https://misha.agency/wordpress/multisite.html#:~:text=WordPress%20%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D1%81%D0%B0%D0%B9%D1%82%20%E2%80%93%20%D1%8D%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82,%D0%B2%D1%81%D0%B5%D0%BC%D0%B8%20%D1%8D%D1%82%D0%B8%D0%BC%D0%B8%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%D0%BC%D0%B8%20%D0%BA%D0%B0%D0%BA%20%D1%81%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%BE%D1%80.">Читать</a>
+                    <p><span class="blue-two">WP CLI:</span></p>
+                    <p>
+                        <span class="bold">WP CLI</span> - это интерфейс командной строки для WordPress. 
+                        Он позволяет устанавливать/обновлять/удалять темы и плагины, 
+                        создавать и просматривать любые данные на сайте, изменять настройки сайта и многое другое. 
+                        Все это делается из командной строки без использования браузера.
+                    </p>
+                    <p>
+                        <span class="bold">Подробнее:</span>
+                    </p>
+                    <a target="_blank" href="https://code.tutsplus.com/ru/tutorials/what-is-wp-cli-a-beginners-guide--cms-28649">Читать</a>
+                    <div class="block-footer"></div>
+                </div>
             </div>
             <div class="content" id="elm-4">
                 <div class="block">rest api</div>
@@ -61,9 +363,20 @@
             <div class="content" id="elm-7">
                 <div class="block">html</div>
             </div>
+            <div class="content" id="elm-8">
+                <div class="block">mysql</div>
+            </div>
+            <div class="content" id="elm-9">
+                <div class="block">ajax</div>
+            </div>
+            <div class="content" id="elm-10">
+                <div class="block">json</div>
+            </div>
         </div>
     </div>
     <script src="js/jquery.min.js"></script>
+    <script src="js/overlayScrollbars.min.js"></script>
+    <script src="js/prism.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

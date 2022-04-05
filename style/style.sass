@@ -9,12 +9,41 @@ body
     left: 0%
     position: fixed
     background-color: #17212B
-
+    ul 
+        padding: 0px 
+        margin: 0px 
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        justify-content: center
+        li 
+            list-style-type: none
+            padding: 5px 10px 5px 10px
+            border-radius: 5px 
+            text-align: center
+            margin: 10px
+            transition: 0.3s
+            border: 1px solid rgba(255,255,255,0.1)
+            &:hover 
+                cursor: pointer
+                background: #17212B
+                border: 1px solid #fff            
+            a 
+                width: 100%
+                height: 100%
+                text-decoration: none 
+                color: #fff
+.bold 
+    font-weight: bold
 
 .blue
     background-color: $blue
+    color: #17212B
+    padding: 2px 6px 2px 6px
 .pink
     background-color: $pink
+    color: #17212B
+    padding: 2px 6px 2px 6px
 .red
     background-color: $red
 .green
@@ -23,34 +52,14 @@ body
     background-color: $orange
 .blue-two
     background-color: $blue-two
+    color: #17212B
+    padding: 2px 6px 2px 6px
 .pink-two
     background-color: $pink-two
-
-ul 
-    padding: 0px
-    margin: 0px
-    display: flex
-    flex-direction: column
-    flex-wrap: wrap
-    justify-content: center
-    li 
-        list-style-type: none
-        padding: 5px 10px 5px 10px
-        border-radius: 5px 
-        text-align: center
-        margin: 10px
-        transition: 0.3s
-        border: 1px solid rgba(255,255,255,0.1)
-        &:hover 
-                cursor: pointer
-                background: #17212B
-                border: 1px solid #fff            
-        a 
-            width: 100%
-            height: 100%
-            text-decoration: none 
-            color: #fff
-            
+        
+.link-pink
+    color: $pink
+    font-size: 18px
 
 @media(max-width: 1280px)
     .content 
@@ -58,11 +67,11 @@ ul
     .menu
         width: 100%  
         margin-top: 10px     
-    ul 
-        flex-direction: row
-        margin: 0px
-        li 
-            margin: 5px
+        ul 
+            flex-direction: row
+            margin: 0px
+            li 
+                margin: 5px
 
 @media(max-width: 992px)
     .content 
@@ -71,22 +80,21 @@ ul
         width: 100% 
         padding: 0px 
         margin-top: 10px     
-    ul 
-        flex-direction: row
-        margin: 0px
-        li 
-            margin: 5px
+        ul 
+            flex-direction: row
+            margin: 0px
+            li 
+                margin: 5px
 
 @media(max-width: 767px)
     .content 
         margin: 120px 20px 120px !important
-    ul 
-        padding: 0px 
-        margin: 0px
-        li 
-            margin: 5px
-
-
+    menu
+        ul 
+            padding: 0px 
+            margin: 0px
+            li 
+                margin: 5px
 
 .container 
     max-width: 1200px
@@ -104,4 +112,18 @@ ul
     border-radius: 5px
     background: #fff
     padding: 20px
+    overflow: hidden
+    overflow-y: scroll
+    span 
+        font-weight: bold 
+        margin: 2px
+        
+.block-footer
+    height: 50px
+
+
+    
+
+    
+    
 

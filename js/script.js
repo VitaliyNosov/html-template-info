@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    // Menu scrol block
+
     $('.go_to').click( function(){ // ловим клик по ссылке с классом go_to
 	var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
         if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
@@ -6,4 +9,13 @@ $(document).ready(function(){
         }
 	    return false; // выключаем стандартное действие
     });
+    
+    // Overlay Scrollbar
+    
+    $('.block').overlayScrollbars({
+        sizeAutoCapable: false,
+        resize: "vertical"
+        
+    });
+
 });
