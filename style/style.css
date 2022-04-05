@@ -79,8 +79,20 @@ body {
   background-color: #ED9F20;
 }
 
+.orange-two {
+  background-color: #F16529;
+  color: #17212B;
+  padding: 2px 6px 2px 6px;
+}
+
 .blue-two {
   background-color: #7595FF;
+  color: #17212B;
+  padding: 2px 6px 2px 6px;
+}
+
+.blue-three {
+  background-color: #2162AE;
   color: #17212B;
   padding: 2px 6px 2px 6px;
 }
