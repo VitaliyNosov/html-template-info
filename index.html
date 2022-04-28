@@ -482,7 +482,468 @@
                 </div>
             </div>
             <div class="content" id="elm-8">
-                <div class="block">mysql</div>
+                <div class="block">
+                    <h1>MySQL — свободная реляционная система управления базами данных</h1>
+                    <p class="p-blue">Какие еще бывают базы данных: </p>
+                    <ul>
+                        <li>
+                            <span class="blue">Реляционные базы данных (MySQL, Oracle DB, PostgreSQL.)</span>
+                            Это самый популярный тип БД, в которых информация хранится в виде таблиц. 
+                            В строках находится описание каждого отдельного свойства объекта, 
+                            а столбцы нужны для извлечения определённых свойств из строки.
+                            Таблицы могут быть взаимосвязаны.
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Резидентные базы данных (Redis, Apache Ignite, Tarantool.)</span>
+                            Сведения хранятся в оперативной памяти. Данные обрабатываются быстро, 
+                            поэтому резидентные БД популярны там, где нужно обеспечить максимально короткое время отклика.
+                            Они помогают управлять телекоммуникационным оборудованием, 
+                            проводить торги в онлайн-режиме или Real-Time обслуживание. 
+                            Базы in-memory поддерживают и быстрое написание, и быстрое чтение. 
+                            В основном они работают с записями «ключ-значение», но также могут работать со столбцами.
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Поисковые базы данных (Elastic.)</span>
+                            Этот тип БД нужен для получения сведений через фильтр. 
+                            Искать можно по любому введённому значению, в том числе по отдельным словам. 
+                            Можно пользоваться полнотекстовым поиском. 
+                            Поисковые базы данных хорошо масштабируются и удобны для хранения журналов, 
+                            объёмных текстовых значений.
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Базы данных с широкими столбцами (Cassandra, Google BigTable, HBase.)</span>
+                            БД с широкими столбцами могут запрашивать большие объёмы данных быстрее, 
+                            чем обычные реляционные. Сведения хранятся в виде записей «‎ключ-значение»‎ 
+                            на жёстком диске или твёрдотельном накопителе. 
+                            Базы данных с широкими столбцами позволяют выполнять быструю запись построчно и быстрое чтение по ключу.
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Столбчатые базы данных (Clickhouse, Vertica.)</span>
+                            В БД такого типа данные хранятся в столбцах, а не в строках. 
+                            Получение доступа к содержимому осуществляется без помощи ключей. 
+                            При использовании столбчатых баз данных используют пакетную вставку, 
+                            чтобы можно было готовить информацию для быстрого чтения по столбцам. 
+                            В столбчатых БД есть поддержка аналитики и возможность удобного масштабирования.
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Документоориентированные базы данных (CouchDB, Couchbase, MongoDB)</span>
+                            Если в реляционных БД для извлечения данных нужно объединять таблицы, 
+                            то в этих базах отлично хранится несвязанная информация в больших объёмах. 
+                            Они поддерживают JSON. 
+                            Для любого ключа можно создать сложное значение и сразу включить всю структуру данных в одну запись. 
+                            Выборка по запросу может содержать части множества документов без их полной загрузки в оперативную память.
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Графовые базы данных (OrientDB, Neo4j.)</span>
+                            Данные хранятся в виде графов, то есть моделей с узлами и связями. 
+                            Они достаточно гибкие, с логичной структурой. 
+                            Узлы служат для хранения сущностей данных, а рёбра — для хранения взаимосвязей между сущностями, 
+                            которыми можно управлять.
+                        </li>
+                    </ul>
+                    <p class="p-blue">Основные операции:</p>
+                    <ul>
+                        <li>
+                            <span class="blue">Типы данных: Числовые типы, Символьные (строковые), Текстовые и бинарные, Дата/время, JSON</span>
+                                <br/>
+                            <a class="link-blue" target="_blanc" href="https://selectel.ru/blog/tutorials/data-types-in-mysql/">Читать подробнее..</a>
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Запрос SELECT (SELECT - ВЫБОР)</span>
+                            <p>
+                                <pre class="lang-php">
+                                    <code>
+                                        # SELECT - выбрать
+                                        # * - все
+                                        # FROM - из
+                                        # country - название таблицы
+                                        # ; - завершение запроса
+                                        # DISTINCT - используется для указания на то, что следует работать только с уникальными значениями столбца
+                                        # LIMIT - позволяет вывести указанное число строк из таблицы. Оператор SQL LIMIT записывается всегда в конце запроса
+                                        # OFFSET - указывает количество строк, которые нужно пропустить, прежде чем начать возвращать строки из запроса
+                                        # Code, Name, Continent - названия столбцов
+
+                                        # Примеры запросов:
+
+                                        SELECT * FROM country;
+                                        SELECT Code, Name, Continent FROM country;
+                                        SELECT DISTINCT Continent FROM country;
+                                        SELECT Code, Name, Continent FROM country;
+                                        SELECT Code, Name, Continent FROM country LIMIT 5 OFFSET 5;
+                                        SELECT Code, Name, Continent FROM country LIMIT 5,5;
+
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Сортировка данных с ORDER BY</span>
+                            <p>
+                                <pre class="lang-php">
+                                    <code>
+                                        # SELECT - выбрать
+                                        # * - все
+                                        # FROM - из
+                                        # country - название таблицы
+                                        # ; - завершение запроса
+                                        # DISTINCT - используется для указания на то, что следует работать только с уникальными значениями столбца
+                                        # LIMIT - позволяет вывести указанное число строк из таблицы. Оператор SQL LIMIT записывается всегда в конце запроса
+                                        # OFFSET - указывает количество строк, которые нужно пропустить, прежде чем начать возвращать строки из запроса
+                                        # Code, Name, Continent - названия столбцов
+                                        # ORDER BY - выполняет сортировку выходных значений. Оператор SQL ORDER BY можно применять как к числовым столбцам, так и к строковым. 
+                                        # В последнем случае, сортировка будет происходить по алфавиту.
+
+                                        # Примеры запросов:
+
+                                        SELECT Name, Population FROM country ORDER BY Population;
+                                        SELECT Region, Population, Name FROM country ORDER BY Region, Population;
+                                        SELECT Region, Population, Name FROM country ORDER BY 1, 2;
+                                        SELECT Name, Population FROM country ORDER BY Population DESC;
+                                        SELECT Name, Population FROM country ORDER BY Population ASC;
+                                        SELECT Region, Population, Name FROM country ORDER BY Region DESC, Population;
+
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Функции MySQL</span>
+                            <p>
+                                <pre class="lang-php">
+                                    <code>
+                                        # SELECT - выбрать
+                                        # * - все
+                                        # FROM - из
+                                        # country - название таблицы
+                                        # ; - завершение запроса
+                                        # DISTINCT - используется для указания на то, что следует работать только с уникальными значениями столбца
+                                        # LIMIT - позволяет вывести указанное число строк из таблицы. Оператор SQL LIMIT записывается всегда в конце запроса
+                                        # OFFSET - указывает количество строк, которые нужно пропустить, прежде чем начать возвращать строки из запроса
+                                        # Code, Name, Continent - названия столбцов
+                                        # ORDER BY - выполняет сортировку выходных значений. Оператор SQL ORDER BY можно применять как к числовым столбцам, так и к строковым
+                                        # В последнем случае, сортировка будет происходить по алфавиту
+                                        # ( ... ) - круглые скобки используются для задания порядка вычислений в выражении
+
+                                        # Примеры запросов:
+
+                                        #https://dev.mysql.com/doc/refman/8.0/en/functions.html
+                                        #http://www.mysql.ru/docs/man/Functions.html
+
+                                        SELECT CONCAT(Name, ', ', Continent, ', ', Region) AS full_name FROM country LIMIT 10;
+                                        SELECT CONCAT_WS(', ', Name, Continent, Region) AS full_name FROM country LIMIT 10;
+                                        SELECT Name, FORMAT(SurfaceArea, 1, 'de_DE') AS area_de, FORMAT(SurfaceArea, 1, 'ru_RU') AS area_ru, Population FROM country ORDER BY Population DESC LIMIT 10;
+                                        SELECT Name, UCASE(Name) AS u1, LCASE(Name) AS l1 FROM country LIMIT 10;
+                                        SELECT LTRIM('   test   ');
+                                        SELECT RTRIM('   test   ');
+                                        SELECT TRIM('   test   ');
+                                        SELECT Name, SurfaceArea, Population, (Population / SurfaceArea) AS Density, CEIL(Population / SurfaceArea) AS Density2 FROM country ORDER BY Population DESC LIMIT 10;
+                                        SELECT Name, SurfaceArea, Population, (Population / SurfaceArea) AS Density, FLOOR(Population / SurfaceArea) AS Density2 FROM country ORDER BY Population DESC LIMIT 10;
+                                        SELECT Name, SurfaceArea, Population, (Population / SurfaceArea) AS Density, ROUND( (Population / SurfaceArea), 1) AS Density2 FROM country ORDER BY Population DESC LIMIT 10;
+                                        SELECT NOW();
+                                        SET lc_time_names = 'ru_RU';
+                                        SELECT DATE_FORMAT(NOW(), '%d %M %Y');
+
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Объединение таблиц в MySQL - Подзапросы</span>
+                            <p>
+                                <pre class="lang-php">
+                                    <code>
+                                        # SELECT - выбрать
+                                        # * - все
+                                        # FROM - из
+                                        # country - название таблицы
+                                        # ; - завершение запроса
+                                        # DISTINCT - используется для указания на то, что следует работать только с уникальными значениями столбца
+                                        # LIMIT - позволяет вывести указанное число строк из таблицы. Оператор SQL LIMIT записывается всегда в конце запроса
+                                        # OFFSET - указывает количество строк, которые нужно пропустить, прежде чем начать возвращать строки из запроса
+                                        # Code, Name, Continent - названия столбцов
+                                        # ORDER BY - выполняет сортировку выходных значений. Оператор SQL ORDER BY можно применять как к числовым столбцам, так и к строковым
+                                        # В последнем случае, сортировка будет происходить по алфавиту
+                                        # ( ... ) - круглые скобки используются для задания порядка вычислений в выражении
+
+                                        # Примеры запросов:
+
+                                        SELECT city.Name, (
+                                            SELECT country.Name FROM country WHERE country.Code = city.CountryCode
+                                        ) AS country
+                                        FROM city;
+                                        
+                                        SELECT city.Name, country.Name AS country FROM city, country WHERE country.Code = city.CountryCode;
+                                        
+                                        SELECT * FROM Orders, Customers WHERE Orders.CustomerId = Customers.Id;
+                                        
+                                        SELECT Customers.FirstName, Products.ProductName, Orders.CreatedAt
+                                            FROM Orders, Customers, Products
+                                                WHERE Orders.CustomerId = Customers.Id AND Orders.ProductId = Products.Id;
+                                                
+                                        SELECT C.FirstName, P.ProductName, O.CreatedAt
+                                            FROM Orders AS O, Customers AS C, Products AS P
+                                                WHERE O.CustomerId = C.Id AND O.ProductId = P.Id;
+
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Оператор INSERT в MySQL</span>
+                            <p>
+                                <pre class="lang-php">
+                                    <code>
+                                        # SELECT - выбрать
+                                        # * - все
+                                        # FROM - из
+                                        # country - название таблицы
+                                        # ; - завершение запроса
+                                        # DISTINCT - используется для указания на то, что следует работать только с уникальными значениями столбца
+                                        # LIMIT - позволяет вывести указанное число строк из таблицы. Оператор SQL LIMIT записывается всегда в конце запроса
+                                        # OFFSET - указывает количество строк, которые нужно пропустить, прежде чем начать возвращать строки из запроса
+                                        # Code, Name, Continent - названия столбцов
+                                        # ORDER BY - выполняет сортировку выходных значений. Оператор SQL ORDER BY можно применять как к числовым столбцам, так и к строковым
+                                        # В последнем случае, сортировка будет происходить по алфавиту
+                                        # ( ... ) - круглые скобки используются для задания порядка вычислений в выражении
+                                        # INSERT - добавляет данных в БД в MySQL используется команда INSERT
+
+                                        # Примеры запросов:
+
+                                        #INSERT [INTO] имя_таблицы [(столбец1, столбец2, ... столбецN)] VALUES (значение1, значение2, ... значениеN)
+
+                                        INSERT INTO Products (ProductName, Manufacturer, Price)
+                                        VALUES ('SONY XPERIA', 'SONY');
+                                        INSERT INTO Products (ProductName, Manufacturer, Price)
+	                                    VALUES ('SONY XPERIA2', 'SONY', 10), ('SONY XPERIA3', 'SONY', 20), ('SONY XPERIA4', 'SONY', 30);
+
+                                        CREATE TABLE `Products_copy` (
+	                                        `Id` INT(11) NOT NULL AUTO_INCREMENT,
+	                                        `ProductName` VARCHAR(30) NOT NULL,
+	                                        `Manufacturer` VARCHAR(20) NOT NULL,
+	                                        `ProductCount` INT(11) NULL DEFAULT '0',
+	                                        `Price` DECIMAL(10,0) NOT NULL DEFAULT '0',
+	                                    PRIMARY KEY (`Id`)
+                                            )
+                                        COLLATE='utf8_general_ci'
+                                        ENGINE=InnoDB;
+
+                                        INSERT INTO Products_copy (Id, ProductName, Manufacturer, ProductCount, Price)
+	                                        SELECT Id, ProductName, Manufacturer, ProductCount, Price FROM Products;
+
+                                        CREATE TABLE Products_copy AS SELECT * FROM Products;
+
+                                        CREATE TABLE Products_copy (PRIMARY KEY (Id)) AS SELECT * FROM Products;
+
+                                        CREATE TABLE Products_copy LIKE Products;
+
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Операторы UPDATE и DELETE</span>
+                            <p>
+                                <pre class="lang-php">
+                                    <code>
+                                        # SELECT - выбрать
+                                        # * - все
+                                        # FROM - из
+                                        # country - название таблицы
+                                        # ; - завершение запроса
+                                        # DISTINCT - используется для указания на то, что следует работать только с уникальными значениями столбца
+                                        # LIMIT - позволяет вывести указанное число строк из таблицы. Оператор SQL LIMIT записывается всегда в конце запроса
+                                        # OFFSET - указывает количество строк, которые нужно пропустить, прежде чем начать возвращать строки из запроса
+                                        # Code, Name, Continent - названия столбцов
+                                        # ORDER BY - выполняет сортировку выходных значений. Оператор SQL ORDER BY можно применять как к числовым столбцам, так и к строковым
+                                        # В последнем случае, сортировка будет происходить по алфавиту
+                                        # ( ... ) - круглые скобки используются для задания порядка вычислений в выражении
+                                        # INSERT - добавляет данных в БД в MySQL используется команда INSERT
+                                        # UPDATE - используется для обновления существующих записей в таблице в базе данных MySQL. Существует три синтаксиса для оператора UPDATE в зависимости от типа обновления, которое вы хотите выполнить
+                                        # DELETE - команда DELETE удаляет данные из БД
+
+                                        # Примеры запросов:
+
+                                        CREATE TABLE Products_copy (Id INT AUTO_INCREMENT PRIMARY KEY) AS SELECT * FROM Products;
+                                        UPDATE Products_copy SET Manufacturer = 'Sony' WHERE Id = 9;
+                                        UPDATE Products_copy SET Manufacturer = 'Sony', ProductCount = NULL WHERE Id = 10;
+                                        DELETE FROM Products_copy WHERE Id > 11;
+                                        TRUNCATE TABLE Products_copy;
+
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Создание, изменение и удаление таблиц в MySQL</span>
+                            <p>
+                                <pre class="lang-php">
+                                    <code>
+                                        # SELECT - выбрать
+                                        # * - все
+                                        # FROM - из
+                                        # country - название таблицы
+                                        # ; - завершение запроса
+                                        # DISTINCT - используется для указания на то, что следует работать только с уникальными значениями столбца
+                                        # LIMIT - позволяет вывести указанное число строк из таблицы. Оператор SQL LIMIT записывается всегда в конце запроса
+                                        # OFFSET - указывает количество строк, которые нужно пропустить, прежде чем начать возвращать строки из запроса
+                                        # Code, Name, Continent - названия столбцов
+                                        # ORDER BY - выполняет сортировку выходных значений. Оператор SQL ORDER BY можно применять как к числовым столбцам, так и к строковым
+                                        # В последнем случае, сортировка будет происходить по алфавиту
+                                        # ( ... ) - круглые скобки используются для задания порядка вычислений в выражении
+                                        # INSERT - добавляет данных в БД в MySQL используется команда INSERT
+                                        # UPDATE - используется для обновления существующих записей в таблице в базе данных MySQL. Существует три синтаксиса для оператора UPDATE в зависимости от типа обновления, которое вы хотите выполнить
+                                        # DELETE - команда DELETE удаляет данные из БД
+                                        # CREATE TABLE - команда создает базу данных
+
+                                        # Примеры запросов:
+
+                                        CREATE TABLE [IF NOT EXISTS] Products_copy
+                                            (
+	                                            Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	                                            ProductName VARCHAR(30) NOT NULL,
+	                                            Manufacturer VARCHAR(20) NOT NULL,
+	                                            ProductCount INT NULL DEFAULT '0',
+	                                            Price DECIMAL(10,0) NOT NULL DEFAULT '0'
+                                            );
+
+                                        ALTER TABLE Products_copy MODIFY Manufacturer VARCHAR(255);
+                                        ALTER TABLE Products_copy ADD test INT;
+                                        ALTER TABLE Products_copy DROP COLUMN test;
+                                        DROP TABLE Products_copy;
+
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                        <li>
+                            <span class="blue">Представления в MySQL (или вью - это виртуальная таблица, методанные в которой храница sql запрос)</span>
+                            <p class="p-blue">
+                                Такой подход используеться когда запросы слишком сложные, то есть на основе запроса содаеться предтавления
+                            </p>
+                            <p class="p-blue">
+                                Второй вариант это защита данных.
+                            </p>
+                            <p>
+                                <pre class="lang-php">
+                                    <code>
+                                        # SELECT - выбрать
+                                        # * - все
+                                        # FROM - из
+                                        # country - название таблицы
+                                        # ; - завершение запроса
+                                        # DISTINCT - используется для указания на то, что следует работать только с уникальными значениями столбца
+                                        # LIMIT - позволяет вывести указанное число строк из таблицы. Оператор SQL LIMIT записывается всегда в конце запроса
+                                        # OFFSET - указывает количество строк, которые нужно пропустить, прежде чем начать возвращать строки из запроса
+                                        # Code, Name, Continent - названия столбцов
+                                        # ORDER BY - выполняет сортировку выходных значений. Оператор SQL ORDER BY можно применять как к числовым столбцам, так и к строковым
+                                        # В последнем случае, сортировка будет происходить по алфавиту
+                                        # ( ... ) - круглые скобки используются для задания порядка вычислений в выражении
+                                        # INSERT - добавляет данных в БД в MySQL используется команда INSERT
+                                        # UPDATE - используется для обновления существующих записей в таблице в базе данных MySQL. Существует три синтаксиса для оператора UPDATE в зависимости от типа обновления, которое вы хотите выполнить
+                                        # DELETE - команда DELETE удаляет данные из БД
+                                        # CREATE TABLE - команда создает базу данных
+                                        # CREATE VIEW - (представление или вьюха) не является физической таблицей, а скорее представляет собой виртуальную таблицу, созданную запросом, соединяющим одну или несколько таблиц.
+
+                                        # Примеры запросов:
+
+                                        CREATE VIEW city_info AS
+                                        SELECT city.Name AS city_name, country.Name AS country_name, country.Code, countrylanguage.Language 
+                                            FROM country
+                                             JOIN city ON city.CountryCode = country.Code
+                                             JOIN countrylanguage ON countrylanguage.CountryCode = country.Code
+                                             WHERE countrylanguage.IsOfficial = 'T';
+                                    
+                                    
+                                        SELECT * FROM city_info;
+                                    
+                                        DROP VIEW IF EXISTS city_info;
+
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                            </br>
+                        <li>
+                            <span class="blue">Хранимые процедуры в MySQL</span>
+                            <p class="p-blue">Хранимая процедура - это подпрограмма, она хранит имя, список параметров, запросы sql</p>
+                            <p class="p-blue">Как правило это используеться для того что бы по какому то событию выполнять какие то sql команды</p>
+                            <p>
+                                <pre class="lang-php">
+                                    <code>
+                                        # SELECT - выбрать
+                                        # * - все
+                                        # FROM - из
+                                        # country - название таблицы
+                                        # ; - завершение запроса
+                                        # DISTINCT - используется для указания на то, что следует работать только с уникальными значениями столбца
+                                        # LIMIT - позволяет вывести указанное число строк из таблицы. Оператор SQL LIMIT записывается всегда в конце запроса
+                                        # OFFSET - указывает количество строк, которые нужно пропустить, прежде чем начать возвращать строки из запроса
+                                        # Code, Name, Continent - названия столбцов
+                                        # ORDER BY - выполняет сортировку выходных значений. Оператор SQL ORDER BY можно применять как к числовым столбцам, так и к строковым
+                                        # В последнем случае, сортировка будет происходить по алфавиту
+                                        # ( ... ) - круглые скобки используются для задания порядка вычислений в выражении
+                                        # INSERT - добавляет данных в БД в MySQL используется команда INSERT
+                                        # UPDATE - используется для обновления существующих записей в таблице в базе данных MySQL. Существует три синтаксиса для оператора UPDATE в зависимости от типа обновления, которое вы хотите выполнить
+                                        # DELETE - команда DELETE удаляет данные из БД
+                                        # CREATE TABLE - команда создает базу данных
+                                        # CREATE VIEW - (представление или вьюха) не является физической таблицей, а скорее представляет собой виртуальную таблицу, созданную запросом, соединяющим одну или несколько таблиц.
+                                        # PROCEDURE - опредиляет процедуру которо йнужно присвоить имя
+
+                                        # Примеры запросов:
+
+                                        DELIMITER //
+                                        CREATE PROCEDURE test()
+                                        BEGIN
+	                                        SELECT 'Hello, I am a Procedure' AS hi;
+                                        END //
+
+                                        CALL test();
+
+                                        DELIMITER //
+                                        CREATE PROCEDURE city_info()
+                                        BEGIN
+	                                    SELECT city.Name AS city_name, country.Name AS country_name, country.Code, countrylanguage.Language 
+	                                    FROM country
+	                                        JOIN city ON city.CountryCode = country.Code
+	                                        JOIN countrylanguage ON countrylanguage.CountryCode = country.Code
+	                                        WHERE countrylanguage.IsOfficial = 'T';   
+                                        END //
+
+                                        DROP PROCEDURE test;
+
+                                        DELIMITER //
+                                        CREATE PROCEDURE city_info(l INT)
+                                        BEGIN
+                                            SELECT city.Name AS city_name, country.Name AS country_name, country.Code, countrylanguage.Language 
+                                            FROM country
+                                            JOIN city ON city.CountryCode = country.Code
+                                            JOIN countrylanguage ON countrylanguage.CountryCode = country.Code
+                                            WHERE countrylanguage.IsOfficial = 'T' LIMIT l;
+                                        END //
+
+
+                                        CALL city_info(5)
+
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="block-footer"></div>
+                </div>
             </div>
             <div class="content" id="elm-9">
                 <div class="block">ajax</div>
