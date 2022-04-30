@@ -53,6 +53,20 @@
             </div>
         </div>
         <div class="container">
+            <div class="block-info">
+                <div class="text">
+                    <span class="text-pink">ш</span>
+                    <span class="text-blue">п</span>
+                    <span class="text-blue-two">а</span>
+                    <span class="text-green">р</span>
+                    <span class="text-orange">г</span>
+                    <span class="text-blue">а</span>
+                    <span class="text-orange-two">л</span>
+                    <span class="text-blue">к</span>
+                    <span class="text-orange">а</span>
+                </div>
+                <span>для собеседования</span>
+            </div>
             <div class="content" id="elm">
                 <div class="block">
                     <p class="p-pink">
@@ -622,9 +636,41 @@ echo "<link rel='stylesheet' href='style.css'>";
                         <li>
                             <span class="orange">Типы данных</span>
                         </li>
+                        <p class="p-orange">
+                            Стандарт ECMAScript определяет 8 типов:
+                        </p>
+                        <ul>
+                            <li>Undefined (Неопределённый тип)  : typeof instance === "undefined"</li>
+                            <li>Boolean (Булев, Логический тип) : typeof instance === "boolean"</li>
+                            <li>Number (Число) : typeof instance === "number"</li>
+                            <li>String (Строка) : typeof instance === "string"</li>
+                            <li>BigInt  : typeof instance === "bigint"
+                                BigInt является встроенным объектом, который предоставляет способ представления целых чисел, которые больше 2 53, 
+                                что является наибольшим числом, которое JavaScript может надёжно представить с помощью Number примитива.
+                            </li>
+                            <li>Symbol (в ECMAScript 6)  : typeof instance === "symbol"Символ — это уникальное и иммутабельное примитивное значение, 
+                                которое может быть использовано как ключ для свойства объекта (смотрите ниже). 
+                                В некоторых языках программирования символы называются атомами. </li>
+                            <li>Null (Null тип ) : typeof instance === "object". Специальный примитив, 
+                                используемый не только для данных но и в качестве указателя на финальную точку в Цепочке Прототипов;</li>
+                            <li>Object (Объект) : typeof instance === "object". Простая структура, используемая не только для хранения данных, 
+                                но и для создания других структур, где любая структура создаётся с использованием ключевого слова new: 
+                                new Object, new Array, new Map (en-US), new Set, new WeakMap, new WeakSet, 
+                                new Date и множество других структур;</li>
+                        </ul>
                             </br>
                         <li>
-                            <span class="orange">Переменые</span>
+                            <span class="orange">Обьявление переменной:</span>
+                            <p class="p-orange">Области видимости</p>
+                            <ul>
+                                <li><span class="bold">var</span> - она являться глобальной, она может быть локальной если мы ее обьвем в нутри какого-то метода
+                                    Обьявление переменной при вызове встплывает в самый вверх.
+                                </li>
+                                <li><span class="bold">let</span> - обладает блочной областью видемости то есть она являеться локальной.
+                                    Обьявление переменной при вызове не встплывает в самый вверх.
+                                </li>
+                                <li><span class="bold">const</span> - при обределении мы не может переопределить нашу переменную, она являеться костантой.</li>
+                            </ul>
                         </li>
                             </br>
                         <li>
@@ -667,6 +713,7 @@ echo "<link rel='stylesheet' href='style.css'>";
                             <span class="orange">Контекст вызова функции</span>
                         </li>
                     </ul>
+                    <div class="block-footer"></div>
                 </div>
             </div>
             <div class="content" id="elm-6" >

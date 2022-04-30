@@ -1,7 +1,9 @@
 @import "color"
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Rubik+Glitch&family=Yanone+Kaffeesatz&display=swap');
 
 body 
     background: #17212B
+    font-family: 'Manrope'
 
 .menu 
     position: absolute
@@ -33,6 +35,36 @@ body
                 height: 100%
                 text-decoration: none 
                 color: #fff
+                font-size: 14px
+                font-weight: bold
+
+.block-info
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    font-size: 28px
+    color: #fff
+
+.text
+    font-size: 100px 
+    font-family: 'Yanone Kaffeesatz'
+
+.text-green
+    color: $green
+.text-orange 
+    color: $orange
+.text-blue
+    color: $blue
+.text-blue-two
+    color: $blue-two
+.text-pink 
+    color: $pink
+.text-orange-two
+    color: $orange-two
+
+
 .bold 
     font-weight: bold
 
@@ -116,6 +148,13 @@ body
     border-radius: 0px 5px 5px 0px
     color: #676767 
 
+.p-orange 
+    background-color: #EFEFEF
+    border-left: 3px solid $orange
+    padding: 20px
+    border-radius: 0px 5px 5px 0px
+    color: #676767 
+
 
 @media(max-width: 1280px)
     .content 
@@ -151,6 +190,8 @@ body
             margin: 0px
             li 
                 margin: 5px
+    .text
+        font-size: 40px 
 
 .container 
     max-width: 1200px
