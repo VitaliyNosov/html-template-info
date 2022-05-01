@@ -984,6 +984,39 @@ sayHello();
                         </li>
                             </br>
                         <li>
+                            <span class="orange">
+                                Constructor - Конструктор
+                            </span>
+                            <p class="p-orange">
+                                <span>constructor</span> - это специальный метод, служащий для создания и инициализации объектов, созданных с использованием class.
+                                Конструктор позволяет произвести начальную инициализацию, которая должна быть выполнена до того, как остальные методы будут вызваны.
+                            </p>
+                            <p>
+                                <pre class="lang-javascript">
+                                    <code>
+//Пример конструктора
+
+class Person {
+
+    constructor(name) {
+      this.name = name;
+    }
+  
+    introduce() {
+      console.log(`Hello, my name is ${this.name}`);
+    }
+  
+  }
+  
+  const otto = new Person('Отто');
+  
+otto.introduce();
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                            </br>
+                        <li>
                             <span class="orange">Promise - Промис</span>
                             <p class="p-orange">
                                 Объект <span>Promise</span> используется для отложенных и асинхронных вычислений.
